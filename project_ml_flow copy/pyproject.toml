@@ -1,0 +1,29 @@
+[project]
+name = "ml_workflow"
+version = "0.0.1"
+description = "project_dependency"
+authors = [
+    {name = "chloe",email = "xy.he201833@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+pandas = "^2.2.1"
+numpy = "<2.0"
+matplotlib = "^3.10.1"
+seaborn = "^0.13.2"
+statsmodels = "^0.14.4"
+pyarrow = ">=9.0.1,<20.0.0"
+lightgbm = ">=4.6.0,<5.0.0"
+doubleml = ">=0.9.3,<0.10.0"
+catboost = "^1.2.7"
+xgboost = "^3.0.0"
+scikit-uplift = "^0.5.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
