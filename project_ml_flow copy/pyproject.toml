@@ -38,6 +38,7 @@ kagglehub = "^0.3.12"
 transformers = "^4.51.3"
 
 #Ml FLow tracking updated
+causalml = "^0.15.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
