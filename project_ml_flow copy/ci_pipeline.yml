@@ -30,7 +30,7 @@ test-and-run:
 
   - name: Run Pytest on all test modules
     run: |
-      poetry run pytest tests/test_PriceElasticityPart1.py tests/test_PriceElasticityPart2.py tests/test_PriceElasticityPart3.py
+      poetry run pytest tests/
 #
 #  - name: 🐳 Build Docker Image
 #    run: docker build -t price-elasticity-pipeline .
