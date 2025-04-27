@@ -1,4 +1,3 @@
-
 # # 2. Data Tests
 #
 # Test data quality: no duplicates, correct types.

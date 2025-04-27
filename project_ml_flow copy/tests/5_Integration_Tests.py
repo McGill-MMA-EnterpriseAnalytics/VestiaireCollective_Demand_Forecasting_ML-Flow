@@ -1,6 +1,4 @@
-
-
-# # 5. Integration Tests
+ # 5. Integration Tests
 # 
 # Test if the full cleaning pipeline runs successfully.
 

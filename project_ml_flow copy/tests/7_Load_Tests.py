@@ -1,10 +1,6 @@
-
-
-# # 7. Load Tests
+# 7. Load Tests
 # 
 # Test if the pipeline can handle large datasets.
-
-
 
 import seller_analysis_notebook_script as sa
 import pandas as pd
