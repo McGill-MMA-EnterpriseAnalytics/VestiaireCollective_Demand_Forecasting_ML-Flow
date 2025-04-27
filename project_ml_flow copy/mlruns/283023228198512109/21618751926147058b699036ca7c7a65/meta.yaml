@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/abmir/OneDrive/School/McGill/Winter 2/Enterprise/Group
+  Project/VestiaireCollective_Demand_Forecasting_ML-Flow/project_ml_flow copy/notebooks/../mlruns/283023228198512109/21618751926147058b699036ca7c7a65/artifacts
+end_time: 1745790721470
+entry_point_name: ''
+experiment_id: '283023228198512109'
+lifecycle_stage: active
+run_id: 21618751926147058b699036ca7c7a65
+run_name: Model Comparison
+run_uuid: 21618751926147058b699036ca7c7a65
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745790705075
+status: 3
+tags: []
+user_id: abmir
