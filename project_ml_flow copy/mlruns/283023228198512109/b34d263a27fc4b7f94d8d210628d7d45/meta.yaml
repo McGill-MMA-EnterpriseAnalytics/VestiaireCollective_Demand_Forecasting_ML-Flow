@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/abmir/OneDrive/School/McGill/Winter 2/Enterprise/Group
+  Project/VestiaireCollective_Demand_Forecasting_ML-Flow/project_ml_flow copy/notebooks/../mlruns/283023228198512109/b34d263a27fc4b7f94d8d210628d7d45/artifacts
+end_time: 1745790252586
+entry_point_name: ''
+experiment_id: '283023228198512109'
+lifecycle_stage: active
+run_id: b34d263a27fc4b7f94d8d210628d7d45
+run_name: big-shrew-671
+run_uuid: b34d263a27fc4b7f94d8d210628d7d45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745790252493
+status: 3
+tags: []
+user_id: abmir

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/8ea715ba1f1348da93fcbd45f50ac208/artifacts
+end_time: 1745785831953
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8ea715ba1f1348da93fcbd45f50ac208
+run_name: XGBoost
+run_uuid: 8ea715ba1f1348da93fcbd45f50ac208
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745785831450
+status: 3
+tags: []
+user_id: abmir

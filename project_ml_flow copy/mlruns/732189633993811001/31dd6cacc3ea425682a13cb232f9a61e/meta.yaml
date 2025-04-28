@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/abmir/OneDrive/School/McGill/Winter 2/Enterprise/Group
+  Project/VestiaireCollective_Demand_Forecasting_ML-Flow/project_ml_flow copy/notebooks/../mlruns/732189633993811001/31dd6cacc3ea425682a13cb232f9a61e/artifacts
+end_time: 1745791228239
+entry_point_name: ''
+experiment_id: '732189633993811001'
+lifecycle_stage: active
+run_id: 31dd6cacc3ea425682a13cb232f9a61e
+run_name: CatBoost
+run_uuid: 31dd6cacc3ea425682a13cb232f9a61e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745791227010
+status: 3
+tags: []
+user_id: abmir
