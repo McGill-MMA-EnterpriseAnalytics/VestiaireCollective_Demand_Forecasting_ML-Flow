@@ -22,3 +22,5 @@ WORKDIR /app
 
 # Copy dependency definitions only (caching optimization)
 COPY pyproject.toml poetry.lock ./
+
+
