@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/chloe/PycharmProjects/VestiaireCollective_Demand_Forecasting_ML-Flow/project_ml_flow
+  copy/src/mlruns/776870439295181742/1c12115c69e941adadcf022f3edd932c/artifacts
+end_time: 1745849528517
+entry_point_name: ''
+experiment_id: '776870439295181742'
+lifecycle_stage: active
+run_id: 1c12115c69e941adadcf022f3edd932c
+run_name: Model Comparison
+run_uuid: 1c12115c69e941adadcf022f3edd932c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745849519223
+status: 3
+tags: []
+user_id: chloe

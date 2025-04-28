@@ -15,10 +15,17 @@ import lightgbm as lgb
 import catboost as cb
 import time
 import tempfile
+
 import os
 
+
+
+
+# Now continue feature engineering, modeling etc.
+
+
 # Set MLflow experiment
-mlflow.set_tracking_uri("file:../mlruns")
+mlflow.set_tracking_uri(f"file://{os.getcwd()}/mlruns")
 mlflow.set_experiment("Vestiaire_Model_Comparison")
 if mlflow.active_run():
     mlflow.end_run()
@@ -50,6 +57,8 @@ def train_and_evaluate_with_mlflow(model, model_name, X_train, y_train, X_val, y
             "f1_score": f1,
             "log_loss": logloss
         })
+        # add models pkl
+        mlflow.sklearn.log_model(model, artifact_path="model")
 
         # Log ROC & PR curves as artifacts
         temp_dir = tempfile.mkdtemp()

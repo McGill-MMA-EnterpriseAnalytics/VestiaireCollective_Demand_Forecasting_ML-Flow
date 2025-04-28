@@ -41,6 +41,8 @@ transformers = "^4.51.3"
 
 #Ml FLow tracking updated
 causalml = "^0.15.3"
+gdown = "^5.2.0"
+uvicorn = "^0.34.2"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.1.1"
