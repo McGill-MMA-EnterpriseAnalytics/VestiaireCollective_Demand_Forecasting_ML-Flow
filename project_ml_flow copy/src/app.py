@@ -2,6 +2,7 @@ import mlflow
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+mlflow.set_tracking_uri("file:/app/mlruns")
 # Load best run id
 with open("best_run_id.txt", "r") as f:
     best_run_id = f.read().strip()
