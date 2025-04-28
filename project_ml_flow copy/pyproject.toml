@@ -28,6 +28,8 @@ ipykernel = "^6.29.5"
 imbalanced-learn = "^0.13.0"
 mlflow = "^2.22.0"
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #price elasticity testing updated
 pytest = "^8.1.1"
 scikit-learn = "^1.4.2"
@@ -39,6 +41,16 @@ transformers = "^4.51.3"
 
 #Ml FLow tracking updated
 causalml = "^0.15.3"
+=======
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.1.1"
+nbconvert = "^7.16.6"
+>>>>>>> Stashed changes
+=======
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.1.1"
+nbconvert = "^7.16.6"
+>>>>>>> Stashed changes
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

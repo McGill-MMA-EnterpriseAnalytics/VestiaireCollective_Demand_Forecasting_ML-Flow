@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/abmir/OneDrive/School/McGill/Winter 2/Enterprise/Group
+  Project/VestiaireCollective_Demand_Forecasting_ML-Flow/project_ml_flow copy/notebooks/../mlruns/198180374087774633/4c6454d161cd451bb4dc76309122c304/artifacts
+end_time: 1745612182789
+entry_point_name: ''
+experiment_id: '198180374087774633'
+lifecycle_stage: active
+run_id: 4c6454d161cd451bb4dc76309122c304
+run_name: XGBClassifier
+run_uuid: 4c6454d161cd451bb4dc76309122c304
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745612173855
+status: 3
+tags: []
+user_id: abmir

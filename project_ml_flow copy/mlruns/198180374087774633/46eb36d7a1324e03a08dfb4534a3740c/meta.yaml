@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/abmir/OneDrive/School/McGill/Winter 2/Enterprise/Group
+  Project/VestiaireCollective_Demand_Forecasting_ML-Flow/project_ml_flow copy/notebooks/../mlruns/198180374087774633/46eb36d7a1324e03a08dfb4534a3740c/artifacts
+end_time: 1745778042908
+entry_point_name: ''
+experiment_id: '198180374087774633'
+lifecycle_stage: active
+run_id: 46eb36d7a1324e03a08dfb4534a3740c
+run_name: roc_curves_plot
+run_uuid: 46eb36d7a1324e03a08dfb4534a3740c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745778042830
+status: 3
+tags: []
+user_id: abmir
