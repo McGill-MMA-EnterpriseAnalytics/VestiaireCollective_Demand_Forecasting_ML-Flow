@@ -38,7 +38,7 @@ if runs_with_roc:
     print(f"Best ROC AUC (Validation): {best_run.data.metrics['roc_auc']}")
 
     # Save best_run_id into a text file
-    with open("best_run_id.txt", "w") as f:
+    with open("../best_run_id.txt", "w") as f:
         f.write(best_run_id)
 
 else:

@@ -1,5 +1,5 @@
-artifact_uri: file:///Users/chloe/PycharmProjects/VestiaireCollective_Demand_Forecasting_ML-Flow/project_ml_flow
-  copy/src/mlruns/776870439295181742/5e0f153920ba48b8bf8ec77113fba90e/artifacts
+artifact_uri:  file:/app/mlruns/776870439295181742/5e0f153920ba48b8bf8ec77113fba90e/artifacts
+
 end_time: 1745849527826
 entry_point_name: ''
 experiment_id: '776870439295181742'

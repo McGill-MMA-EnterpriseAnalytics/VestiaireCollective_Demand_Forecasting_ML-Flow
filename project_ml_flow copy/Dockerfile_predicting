@@ -1,25 +1,32 @@
-# Base image
 FROM python:3.11-slim
 
 # Set working directory
 WORKDIR /app
 
-# Copy necessary files
-# Copy necessary files
-COPY src/best_run_id.txt .
-COPY src/app.py .
-COPY src/mlruns ./mlruns
+# Install Poetry
+RUN pip install --no-cache-dir poetry
 
+# Configure Poetry
+RUN poetry config virtualenvs.create false
+
+# Copy dependency files
+COPY pyproject.toml poetry.lock ./
 
 # Install dependencies
-RUN pip install --no-cache-dir mlflow scikit-learn pandas fastapi uvicorn pydantic
+RUN pip install --no-cache-dir mlflow scikit-learn pandas fastapi uvicorn pydantic catboost
 
-# Set MLflow tracking to local folder
-ENV MLFLOW_TRACKING_URI=file:./mlruns
 
-# Expose port for FastAPI
+# Copy source code
+COPY src/app.py ./app.py
+COPY src/mlruns ./mlruns
+
+COPY best_run_id.txt ./best_run_id.txt
+
+# Set environment variables
+ENV PYTHONPATH=/app
+
+# Expose port
 EXPOSE 8000
 
-# Run the FastAPI app
+# Start server
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
-
