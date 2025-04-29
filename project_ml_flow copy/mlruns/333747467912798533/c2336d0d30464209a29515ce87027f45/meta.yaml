@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/abmir/OneDrive/School/McGill/Winter 2/Enterprise/Group
+  Project/VestiaireCollective_Demand_Forecasting_ML-Flow/project_ml_flow copy/notebooks/../mlruns/333747467912798533/c2336d0d30464209a29515ce87027f45/artifacts
+end_time: 1745903582364
+entry_point_name: ''
+experiment_id: '333747467912798533'
+lifecycle_stage: active
+run_id: c2336d0d30464209a29515ce87027f45
+run_name: XGBoost
+run_uuid: c2336d0d30464209a29515ce87027f45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745903581231
+status: 3
+tags: []
+user_id: abmir

@@ -1,0 +1,16 @@
+artifact_uri: file:///c:/Users/abmir/OneDrive/School/McGill/Winter 2/Enterprise/Group
+  Project/VestiaireCollective_Demand_Forecasting_ML-Flow/project_ml_flow copy/notebooks/../mlruns/333747467912798533/f700fa01b1c949dc8ea381968dafc223/artifacts
+end_time: 1745903805159
+entry_point_name: ''
+experiment_id: '333747467912798533'
+lifecycle_stage: active
+run_id: f700fa01b1c949dc8ea381968dafc223
+run_name: Test_Evaluation
+run_uuid: f700fa01b1c949dc8ea381968dafc223
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745903803980
+status: 3
+tags: []
+user_id: abmir

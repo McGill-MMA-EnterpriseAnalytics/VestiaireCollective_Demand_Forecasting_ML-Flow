@@ -45,6 +45,7 @@ causalml = "^0.15.3"
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.1.1"
 nbconvert = "^7.16.6"
+ipykernel = "^6.29.5"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
