@@ -182,7 +182,7 @@ with mlflow.start_run(run_name="Test_Evaluation", nested=True, parent_run_id=par
 
 ---
 
-## 🤖 AutoML Implementation (Azure)
+## AutoML Implementation (Azure)
 
 The `auto-ml/` directory contains a notebook implementing automated machine learning (AutoML) using **Azure Machine Learning**.
 
