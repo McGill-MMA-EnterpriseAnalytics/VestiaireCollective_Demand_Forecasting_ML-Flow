@@ -9,7 +9,23 @@ Join us on this journey to explore the future of sustainable luxury fashion! �
 Link to company : https://us.vestiairecollective.com  
 Link to dataset : https://www.kaggle.com/datasets/justinpakzad/vestiaire-fashion-dataset
 
+## 🔍 Unit Testing
+
+The tests/ directory contains unit tests for two key analytical components of the project:
+
+- *Price Elasticity Unit Tests: These tests validate the functionality derived from the *causal analysis notebook focused on price elasticity. The original notebook has been modularized into three Python scripts to separate concerns and simplify testing:
+  - Price_Elasticity_1stPart.py
+  - Price_Elasticity_2ndPart.py
+  - Price_Elasticity_3rdPart.py
+
+- *Seller Analysis Tests: These cover logic and feature engineering from the *seller behavior analysis notebook.
+
+Each test folder includes the relevant scripts and supporting documentation on how to implement and extend the unit testing process.
+
 ## Machine Learning Experiment Tracking with MLflow & Optuna
+
+- sold_train.ipynb
+- train.py
 
 This section of our project implements comprehensive machine learning experiment tracking and hyperparameter optimization using MLflow and Optuna. These powerful tools help us manage our model development lifecycle, compare model performance, and find optimal hyperparameters efficiently.
 
