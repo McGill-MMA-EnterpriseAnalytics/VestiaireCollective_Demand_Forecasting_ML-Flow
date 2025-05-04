@@ -31,9 +31,4 @@ test-and-run:
   - name: Run Pytest on all test modules
     run: |
       poetry run pytest tests/
-#
-#  - name: 🐳 Build Docker Image
-#    run: docker build -t price-elasticity-pipeline .
-#
-#  - name: 🚀 Run Pipeline in Container
-#    run: docker run --rm price-elasticity-pipeline
+
