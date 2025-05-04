@@ -201,3 +201,10 @@ The `auto-ml/` directory contains a notebook implementing automated machine lear
 `project_ml_flow copy/auto-ml/AutoML_SoldItems_FINAL.ipynb`
 
 > This serves as a baseline reference to compare custom model performance against Azure's AutoML capabilities.
+
+⚠️ AutoML + MLflow Integration
+Note: We attempted to integrate Azure AutoML with MLflow tracking within the auto-ml module. However, due to Azure ML workspace permission restrictions, we were unable to successfully complete the logging integration.
+
+Despite trying multiple workarounds—including assigning Owner and Contributor roles to different team members across the Azure subscription—the MLflow tracking functionality could not be fully enabled for the AutoML runs. This was primarily due to insufficient access to modify workspace-level diagnostic settings and restricted access to default storage accounts.
+
+As a result, AutoML run artifacts are not automatically logged via MLflow in this implementation. All other model results, metrics, and evaluations are saved locally and documented manually within the notebooks.
