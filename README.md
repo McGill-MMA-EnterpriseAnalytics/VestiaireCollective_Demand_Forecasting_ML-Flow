@@ -178,3 +178,26 @@ with mlflow.start_run(run_name="Test_Evaluation", nested=True, parent_run_id=par
 - **Visualization**: Comprehensive visualizations help understand model performance
 - **Comparison**: Easy comparison between different model types
 - **Documentation**: Automatic logging provides a history of the model development process
+
+
+---
+
+## 🤖 AutoML Implementation (Azure)
+
+The `auto-ml/` directory contains a notebook implementing automated machine learning (AutoML) using **Azure Machine Learning**.
+
+- **Notebook**: `AutoML_SoldItems_FINAL.ipynb`
+- **Objective**: Automatically identify the best model and hyperparameters for predicting item demand (i.e., whether an item is sold).
+- **Platform**: [Azure ML](https://azure.microsoft.com/en-us/products/machine-learning/)
+
+### Features:
+- Automated feature preprocessing and scaling
+- Evaluation across multiple algorithms (e.g., LightGBM, XGBoost, Logistic Regression)
+- Selection of the best run based on validation metrics (e.g., AUC, Accuracy)
+- Integrated MLflow tracking for reproducibility
+- Export of the best model pipeline for downstream use
+
+📂 Path:  
+`project_ml_flow copy/auto-ml/AutoML_SoldItems_FINAL.ipynb`
+
+> This serves as a baseline reference to compare custom model performance against Azure's AutoML capabilities.
