@@ -8,7 +8,7 @@ Join us on this journey to explore the future of sustainable luxury fashion! ğŸŒ
 
 Link to company : https://us.vestiairecollective.com  
 Link to dataset : https://www.kaggle.com/datasets/justinpakzad/vestiaire-fashion-dataset
-
+---
 ## ğŸ” Unit Testing
 
 The tests/ directory contains unit tests for two key analytical components of the project:
