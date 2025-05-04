@@ -8,3 +8,165 @@ Join us on this journey to explore the future of sustainable luxury fashion! �
 
 Link to company : https://us.vestiairecollective.com  
 Link to dataset : https://www.kaggle.com/datasets/justinpakzad/vestiaire-fashion-dataset
+
+## Machine Learning Experiment Tracking with MLflow & Optuna
+
+This section of our project implements comprehensive machine learning experiment tracking and hyperparameter optimization using MLflow and Optuna. These powerful tools help us manage our model development lifecycle, compare model performance, and find optimal hyperparameters efficiently.
+
+### What are MLflow and Optuna?
+
+- **MLflow** is an open-source platform that helps manage the entire machine learning lifecycle, including experimentation, reproducibility, deployment, and a central model registry.
+- **Optuna** is a hyperparameter optimization framework specifically designed for machine learning, using Bayesian optimization to efficiently search the hyperparameter space.
+
+### Implementation Overview
+
+Our implementation uses MLflow and Optuna to:
+
+1. **Track experiments** across multiple model types (XGBoost, LightGBM, CatBoost)
+2. **Optimize hyperparameters** using Bayesian optimization
+3. **Visualize model performance** through metrics and plots
+4. **Compare models** across various evaluation metrics
+5. **Document the model development process** for reproducibility
+
+### MLflow Experiment Structure
+
+Our MLflow implementation uses a hierarchical structure of runs:
+
+```
+Model_Comparison (Parent Run)
+├── Hyperparameter_Tuning
+│   ├── trial_0
+│   ├── trial_1
+│   └── ...
+├── XGBoost
+├── LightGBM
+├── CatBoost
+└── Test_Evaluation
+```
+
+### Hyperparameter Optimization with Optuna
+
+We use Optuna to find optimal hyperparameters for our XGBoost model through Bayesian optimization:
+
+```python
+def objective(trial):
+    # Sample hyperparameters
+    params = {
+        "n_estimators": trial.suggest_int("n_estimators", 10, 100),
+        "max_depth":    trial.suggest_int("max_depth",  3,  10),
+        "learning_rate": trial.suggest_loguniform("learning_rate", 1e-3, 1e-1),
+        "subsample":    trial.suggest_float("subsample", 0.5, 1.0),
+        "colsample_bytree": trial.suggest_float("colsample_bytree", 0.5, 1.0),
+    }
+    
+    # Train and evaluate model with these parameters
+    # ...
+    
+    return auc  # Return metric to optimize
+```
+
+Each trial tests a different set of hyperparameters, and Optuna uses the results to guide the search toward promising areas of the parameter space.
+
+![Optuna Hyperparameter Optimization Visualization]
+<!-- Insert screenshot of Optuna's parameter importance or optimization history -->
+
+### MLflow Tracking
+
+For each model, we track:
+
+#### Parameters
+- Model-specific hyperparameters
+- Training configuration
+
+![MLflow Parameters Visualization]
+<!-- Insert screenshot of MLflow UI showing parameters -->
+
+#### Metrics
+- ROC-AUC score
+- Accuracy
+- Precision
+- Recall
+- F1 score
+- Log loss
+
+![MLflow Metrics Visualization]
+<!-- Insert screenshot of MLflow UI showing metrics -->
+
+#### Artifacts
+1. **Performance Visualizations**
+   - ROC curves
+   - Precision-Recall curves
+   - Confusion matrices
+   - Learning curves
+
+2. **Model Interpretability**
+   - SHAP feature importance plots
+
+3. **Sample Predictions**
+   - CSV files with sample predictions for validation
+
+![MLflow Artifacts Visualization]
+<!-- Insert screenshot of MLflow UI showing artifacts -->
+
+### Key Functions
+
+#### `train_and_evaluate_with_mlflow()`
+
+This function:
+- Trains a model on the training data
+- Evaluates it on the validation set
+- Logs parameters, metrics, and artifacts to MLflow
+- Creates visualizations for model performance
+
+#### `plot_learning_curve_and_log()`
+
+This function:
+- Generates learning curves to assess model performance with different training set sizes
+- Helps identify if the model would benefit from more training data
+- Logs the visualization to MLflow
+
+### Comparing Models
+
+The final evaluation on the held-out test set allows for direct comparison between models:
+
+```python
+# Final evaluation on the held-out test set
+with mlflow.start_run(run_name="Test_Evaluation", nested=True, parent_run_id=parent_run_id):
+    for model, model_name in [(xgb_model, "XGBoost"), (lgb_model, "LightGBM"), (cat_model, "CatBoost")]:
+        y_test_pred_prob = model.predict_proba(X_test)[:, 1]
+        metrics = {
+            f"{model_name}_test_roc_auc": roc_auc_score(y_test, y_test_pred_prob),
+            # Other metrics...
+        }
+        mlflow.log_metrics(metrics)
+```
+
+![Model Comparison Visualization]
+<!-- Insert screenshot of MLflow UI comparing models -->
+
+### How to View Experiment Results
+
+1. Start the MLflow UI:
+   ```bash
+   mlflow ui --port 5000
+   ```
+
+2. Open your browser and navigate to http://localhost:5000
+
+3. Select the "Vestiaire_Model_Comparison" experiment to view all runs
+
+4. Compare models, analyze performance metrics, and view artifacts
+
+### Benefits of Our Implementation
+
+- **Reproducibility**: All experiments are tracked with their parameters and results
+- **Efficiency**: Optuna's Bayesian optimization finds good hyperparameters with fewer trials
+- **Visualization**: Comprehensive visualizations help understand model performance
+- **Comparison**: Easy comparison between different model types
+- **Documentation**: Automatic logging provides a history of the model development process
+
+### Next Steps
+
+- Deploy the best-performing model
+- Set up continuous monitoring of model performance
+- Implement A/B testing framework to validate models in production
