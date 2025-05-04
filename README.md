@@ -67,8 +67,8 @@ def objective(trial):
 
 Each trial tests a different set of hyperparameters, and Optuna uses the results to guide the search toward promising areas of the parameter space.
 
-![Optuna Hyperparameter Optimization Visualization]
-<!-- Insert screenshot of Optuna's parameter importance or optimization history -->
+![image](https://github.com/user-attachments/assets/d50acc9d-5c44-4bbb-81c3-e5a998105b7a)
+
 
 ### MLflow Tracking
 
@@ -77,9 +77,8 @@ For each model, we track:
 #### Parameters
 - Model-specific hyperparameters
 - Training configuration
+![image](https://github.com/user-attachments/assets/6312b287-71e7-4016-baa5-b03114d50214)
 
-![MLflow Parameters Visualization]
-<!-- Insert screenshot of MLflow UI showing parameters -->
 
 #### Metrics
 - ROC-AUC score
@@ -89,8 +88,8 @@ For each model, we track:
 - F1 score
 - Log loss
 
-![MLflow Metrics Visualization]
-<!-- Insert screenshot of MLflow UI showing metrics -->
+![image](https://github.com/user-attachments/assets/75dee077-6025-4f2b-919f-4cfd1eeab7b2)
+
 
 #### Artifacts
 1. **Performance Visualizations**
@@ -105,8 +104,10 @@ For each model, we track:
 3. **Sample Predictions**
    - CSV files with sample predictions for validation
 
-![MLflow Artifacts Visualization]
-<!-- Insert screenshot of MLflow UI showing artifacts -->
+![image](https://github.com/user-attachments/assets/42b636ed-39a7-4cba-b782-d1215020522e)
+![image](https://github.com/user-attachments/assets/4e0b2453-cdd9-40e1-9779-1f4096c602a6)
+![image](https://github.com/user-attachments/assets/e3d80cee-9b52-452c-8803-15bdfca17893)
+
 
 ### Key Functions
 
@@ -140,9 +141,6 @@ with mlflow.start_run(run_name="Test_Evaluation", nested=True, parent_run_id=par
         }
         mlflow.log_metrics(metrics)
 ```
-
-![Model Comparison Visualization]
-<!-- Insert screenshot of MLflow UI comparing models -->
 
 ### How to View Experiment Results
 
