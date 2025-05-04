@@ -27,10 +27,10 @@ project_ml_flow copy/
 │   └── __init__.py
 ├── docs/                      # Documentation and design notes
 ├── mlruns/                    # MLflow run tracking (auto-generated)
-├── models/                    # Exported model artifacts (.pkl, .json, etc.)
+├── models/                    # Exported model artifacts
 ├── notebooks/                 # EDA and development notebooks
 ├── references/                # Research papers, links, external docs
-├── reports/                   # Generated reports, visuals, dashboards
+├── reports/                   # Generated visuals
 ├── src/                       # Main application logic and scripts
 │   ├── app.py                 # FastAPI app for serving predictions
 │   ├── train.py               # Model training pipeline
@@ -48,7 +48,7 @@ project_ml_flow copy/
 ├── Dockerfile_predicting      # Dockerfile for FastAPI deployment
 ├── pyproject.toml             # Poetry dependencies and environment
 ├── poetry.lock
-├── ci_pipeline.yml            # GitHub Actions or CI config
+├── ci_pipeline.yml            # GitHub CI config
 └── README.md
 ```
 
