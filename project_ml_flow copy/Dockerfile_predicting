@@ -19,7 +19,6 @@ RUN pip install --no-cache-dir mlflow scikit-learn pandas fastapi uvicorn pydant
 # Copy source code
 COPY src/app.py ./app.py
 COPY src/mlruns ./mlruns
-
 COPY best_run_id.txt ./best_run_id.txt
 
 # Set environment variables

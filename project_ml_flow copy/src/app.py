@@ -14,7 +14,6 @@ model = mlflow.pyfunc.load_model(
     model_uri=f"runs:/{best_run_id}/model"
 )
 
-
 # FastAPI app
 app = FastAPI()
 
