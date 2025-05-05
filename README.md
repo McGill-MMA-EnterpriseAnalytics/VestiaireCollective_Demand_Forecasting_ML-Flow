@@ -62,18 +62,6 @@ To activate the virtual environment:
 poetry shell
 
 ---
-## Containerized Model Deployment (FastAPI + Docker)
-The trained model is served via a FastAPI app containerized with Docker.
-
-1. Build the Docker Image: (bash) docker build -f Dockerfile_predicting -t vestiaire_predict .
-   
-2. Run the Container: (bash) docker run -p 8000:8000 vestiaire_predict
-   
-3. Access the Swagger UI: http://localhost:8000/docs
-
-This will load the Swagger interface where you can interact with the /predict endpoint to test predictions.
-
----
 
 ## Unit Testing - Price Elasticity
 
@@ -88,9 +76,9 @@ The tests/ directory contains unit tests for two key analytical components of th
 
 Each test folder includes the relevant scripts and supporting documentation on how to implement and extend the unit testing process.
 
-# Seller Analysis — Testing
+## Seller Analysis — Testing
 
-## Tests Structure:
+### Tests Structure:
 ```
 ├── src/
 │ └── seller_analysis_notebook_script.py
@@ -105,7 +93,7 @@ Each test folder includes the relevant scripts and supporting documentation on h
 ```
 This file describes each of the 7 test notebooks used in the project, explaining what each one checks and why it is important.
 
-## 1️⃣ Unit Tests
+### 1️⃣ Unit Tests
 **Notebook:** `1_Unit_Tests.ipynb`  
 **What it does:**  
 - Tests key preprocessing steps: missing value imputation, column dropping.  
@@ -114,7 +102,7 @@ This file describes each of the 7 test notebooks used in the project, explaining
 - Ensure each transformation step works correctly in isolation.
 - Catch simple logic or syntax errors before combining steps.
 
-## 2️⃣ Data Tests
+### 2️⃣ Data Tests
 **Notebook:** `2_Data_Tests.ipynb`  
 **What it does:**  
 - Checks for duplicate rows.
@@ -125,7 +113,7 @@ This file describes each of the 7 test notebooks used in the project, explaining
 - Guarantee data consistency and cleanliness before analysis.
 - Prevent downstream issues in models or aggregations.
 
-## 3️⃣ Model Validation Tests
+### 3️⃣ Model Validation Tests
 **Notebook:** `3_Model_Validation_Tests.ipynb`  
 **What it does:**  
 - Placeholder test that validates model metrics like accuracy or AUC.
@@ -133,7 +121,7 @@ This file describes each of the 7 test notebooks used in the project, explaining
 **Purpose:**  
 - Used once a predictive model is added to confirm it meets quality standards.
 
-## 4️⃣ Model Performance Tests
+### 4️⃣ Model Performance Tests
 **Notebook:** `4_Model_Performance_Tests.ipynb`  
 **What it does:**  
 - Placeholder to measure training or prediction time.
@@ -141,7 +129,7 @@ This file describes each of the 7 test notebooks used in the project, explaining
 **Purpose:**  
 - Ensure your model runs efficiently and can be used at scale.
 
-## 5️⃣ Integration Tests
+### 5️⃣ Integration Tests
 **Notebook:** `5_Integration_Tests.ipynb`  
 **What it does:**  
 - Runs the full pipeline (cleaning + type detection) and checks the final output.
@@ -150,7 +138,7 @@ This file describes each of the 7 test notebooks used in the project, explaining
 - Make sure all steps work together without conflicts.
 - Validate the pipeline end-to-end.
 
-## 6️⃣ Data Skew Tests
+### 6️⃣ Data Skew Tests
 **Notebook:** `6_Data_Skew_Tests.ipynb`  
 **What it does:**  
 - Compares distributions (e.g., mean of `buyers_fees`) between current and new data.
@@ -158,7 +146,7 @@ This file describes each of the 7 test notebooks used in the project, explaining
 **Purpose:**  
 - Detect shifts in data that could affect model accuracy or rule validity.
 
-## 7️⃣ Load Tests
+### 7️⃣ Load Tests
 **Notebook:** `7_Load_Tests.ipynb`  
 **What it does:**  
 - Simulates large dataset and tests pipeline behavior.
@@ -166,9 +154,11 @@ This file describes each of the 7 test notebooks used in the project, explaining
 **Purpose:**  
 - Ensure your pipeline can handle future scaling and real-world data loads.
 
-📁 Each notebook is self-contained and runnable in Jupyter Notebook or VSCode.
+Each notebook is self-contained and runnable in Jupyter Notebook or VSCode.
 """
+
 ---
+# MLflow
 ## Machine Learning Experiment Tracking with MLflow & Optuna
 
 - sold_train.ipynb
@@ -304,58 +294,6 @@ with mlflow.start_run(run_name="Test_Evaluation", nested=True, parent_run_id=par
         }
         mlflow.log_metrics(metrics)
 ```
-
-### Sentiment Analysis & Causal Inference
-
-#### Overview
-This module analyzes product descriptions using VADER sentiment analysis and explores causal relationships between price differentials, description sentiment, and sales outcomes on the Vestiaire Collective marketplace.
-
-#### Methodology
-- **Sentiment Analysis**: Applied VADER to quantify sentiment in product descriptions (compound scores range from -1 to +1)
-- **Causal Inference**: Implemented S-Learner models (Linear Regression, XGBoost, MLP) to estimate treatment effects
-- **Balanced Analysis**: Addressed 60/30/10 positive/neutral/negative class imbalance through undersampling
-
-#### Key Findings
-1. No statistically significant causal relationship between:
-   - Price differential percentage and description sentiment
-   - Description sentiment and product sales
-   
-2. All estimated effects were minimal in magnitude, with confidence intervals crossing zero
-
-3. Price segment analysis revealed slight variation in treatment effects across price points
-
-#### Business Applications
-- Product descriptions' emotional tone doesn't significantly impact sales performance
-- Focus on factual accuracy rather than sentiment optimization when creating listings
-- Price differential decisions can be made independently of description strategy
-- Higher-priced items may benefit from more neutral, information-focused descriptions
-
-#### Code Structure
-The module provides functions for sentiment analysis, visualization, and causal inference with both original and balanced datasets. See `analyze_product_descriptions()` and related functions for implementation details.
-
-
-### How to View Experiment Results
-
-1. Start the MLflow UI:
-   ```bash
-   mlflow ui --port 5000
-   ```
-
-2. Open your browser and navigate to http://localhost:5000
-
-3. Select the "Vestiaire_Model_Comparison" experiment to view all runs
-
-4. Compare models, analyze performance metrics, and view artifacts
-
-### Benefits of Our Implementation
-
-- **Reproducibility**: All experiments are tracked with their parameters and results
-- **Efficiency**: Optuna's Bayesian optimization finds good hyperparameters with fewer trials
-- **Visualization**: Comprehensive visualizations help understand model performance
-- **Comparison**: Easy comparison between different model types
-- **Documentation**: Automatic logging provides a history of the model development process
-
-
 ---
 
 ## AutoML Implementation (Azure)
@@ -414,4 +352,68 @@ The second version is an optimized version of the first, utilizing memory-effici
 df = optimize_dtypes(df)
 ```
 
+## Containerized Model Deployment (FastAPI + Docker)
+The trained model is served via a FastAPI app containerized with Docker.
 
+1. Build the Docker Image: (bash) docker build -f Dockerfile_predicting -t vestiaire_predict .
+   
+2. Run the Container: (bash) docker run -p 8000:8000 vestiaire_predict
+   
+3. Access the Swagger UI: http://localhost:8000/docs
+
+This will load the Swagger interface where you can interact with the /predict endpoint to test predictions.
+
+---
+
+# Sentiment Analysis & Causal Inference
+
+### Overview
+This module analyzes product descriptions using VADER sentiment analysis and explores causal relationships between price differentials, description sentiment, and sales outcomes on the Vestiaire Collective marketplace.
+
+### Methodology
+- **Sentiment Analysis**: Applied VADER to quantify sentiment in product descriptions (compound scores range from -1 to +1)
+- **Causal Inference**: Implemented S-Learner models (Linear Regression, XGBoost, MLP) to estimate treatment effects
+- **Balanced Analysis**: Addressed 60/30/10 positive/neutral/negative class imbalance through undersampling
+
+### Key Findings
+1. No statistically significant causal relationship between:
+   - Price differential percentage and description sentiment
+   - Description sentiment and product sales
+   
+2. All estimated effects were minimal in magnitude, with confidence intervals crossing zero
+
+3. Price segment analysis revealed slight variation in treatment effects across price points
+
+### Business Applications
+- Product descriptions' emotional tone doesn't significantly impact sales performance
+- Focus on factual accuracy rather than sentiment optimization when creating listings
+- Price differential decisions can be made independently of description strategy
+- Higher-priced items may benefit from more neutral, information-focused descriptions
+
+### Code Structure
+The module provides functions for sentiment analysis, visualization, and causal inference with both original and balanced datasets. See `analyze_product_descriptions()` and related functions for implementation details.
+
+
+### How to View Experiment Results
+
+1. Start the MLflow UI:
+   ```bash
+   mlflow ui --port 5000
+   ```
+
+2. Open your browser and navigate to http://localhost:5000
+
+3. Select the "Vestiaire_Model_Comparison" experiment to view all runs
+
+4. Compare models, analyze performance metrics, and view artifacts
+
+### Benefits of Our Implementation
+
+- **Reproducibility**: All experiments are tracked with their parameters and results
+- **Efficiency**: Optuna's Bayesian optimization finds good hyperparameters with fewer trials
+- **Visualization**: Comprehensive visualizations help understand model performance
+- **Comparison**: Easy comparison between different model types
+- **Documentation**: Automatic logging provides a history of the model development process
+
+
+---
