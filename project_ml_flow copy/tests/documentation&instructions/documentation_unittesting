@@ -1,0 +1,197 @@
+# **Project Running Instructions**
+
+This document provides step-by-step instructions for setting up, running, and testing your **price elasticity analysis** project.  
+The same can be done for the other files.
+
+---
+
+# **Project Structure**
+
+Ensure your project structure looks like this:
+
+```
+/your-project-root
+│
+├── src/
+│   └── Price_Elasticity_1stPart.py   
+│
+├── tests/
+│   └── test_PriceElasticityPart1.py   
+│
+├── data/
+│   └── processed/
+│       └── cleaned_data.parquet
+│
+├── requirements.txt
+```
+
+---
+
+# **Setup Instructions**
+
+## **1. Install Dependencies**
+
+First, install all required packages using pip:
+
+```
+pip install -r requirements.txt
+```
+
+If you're using a **virtual environment** (recommended), activate it first:
+
+```
+# Create a virtual environment (if you haven't already)
+python -m venv venv
+
+# Activate the virtual environment
+# On macOS/Linux:
+source venv/bin/activate
+
+# On Windows:
+venv\Scripts\activate
+
+# Then install dependencies
+pip install -r requirements.txt
+```
+
+---
+
+# **Running the Main Script**
+
+To run your price elasticity analysis script:
+
+```
+python src/Price_Elasticity_1stPart.py
+```
+
+*If you encounter path-related errors when loading the data, you might need to adjust the path in the `load_data()` function call within the script.*
+
+---
+
+# **Running Tests**
+
+## **Basic Test Execution**
+
+To run all tests:
+
+```
+pytest tests/
+```
+
+## **Detailed Test Output**
+
+For more detailed test output:
+
+```
+pytest tests/ -v
+```
+
+## **Run Specific Tests**
+
+To run a specific test function:
+
+```
+pytest tests/test_processing.py::test_create_margin_rate -v
+```
+
+To run tests with a specific name pattern:
+
+```
+pytest tests/ -k "margin"
+```
+(*Runs all tests with "margin" in the name*)
+
+---
+
+# **Test Coverage**
+
+To check test coverage (requires **pytest-cov**):
+
+```
+# Install pytest-cov if you haven't already
+pip install pytest-cov
+```
+
+Run tests with coverage:
+
+```
+pytest --cov=src tests/
+```
+
+For a detailed **HTML coverage report**:
+
+```
+pytest --cov=src --cov-report=html tests/
+```
+
+*This creates a `htmlcov` directory with an HTML report you can open in your browser.*
+
+---
+
+# **Troubleshooting**
+
+## **Import Errors**
+
+If you encounter import errors:
+
+1. Verify that your module name in the test file matches your actual Python file name:
+    ```
+    # In test_processing.py
+    import Price_Elasticity_1stPart as pe
+    ```
+2. Check that the `sys.path.insert` line in `test_processing.py` is correctly pointing to your source directory:
+    ```
+    sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+    ```
+
+## **File Not Found Errors**
+
+If data files can't be found:
+
+1. Verify that the data file path in `Price_Elasticity_1stPart.py` is correct:
+    ```
+    # In the main() function
+    df = load_data('../data/processed/cleaned_data.parquet')
+    ```
+2. You might need to adjust the path depending on where you're running the script from.
+
+## **Test Failures**
+
+If tests are failing:
+
+1. Make sure your test environment has all dependencies installed.
+2. Check that your test fixtures match the expected data structure.
+3. Use the `-v` flag with pytest to see more detailed error information.
+
+---
+
+# **Advanced Usage**
+
+## **Running with Different Parameters**
+
+You can modify parameters directly in the code, or create a configuration file for more flexibility.
+
+## **Adding More Tests**
+
+As you develop more functionality, add corresponding tests to `test_processing.py` following the existing patterns.
+
+---
+
+# **Command Quick Reference**
+
+```
+# Run main script
+python src/Price_Elasticity_1stPart.py
+
+# Run all tests
+pytest tests/
+
+# Run tests with verbose output
+pytest tests/ -v
+
+# Run specific test
+pytest tests/test_processing.py::test_function_name
+
+# Run tests with coverage
+pytest --cov=src tests/
+```

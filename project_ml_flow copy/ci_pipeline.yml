@@ -1,0 +1,39 @@
+name: CI/CD for ML Price Elasticity
+
+on:
+push:
+  branches: [main, b1]
+pull_request:
+  branches: [main, b1]
+
+jobs:
+test-and-run:
+  runs-on: ubuntu-latest
+
+  steps:
+  - name: Checkout code
+    uses: actions/checkout@v3
+
+  - name: Set up Python for Poetry and Tests
+    uses: actions/setup-python@v4
+    with:
+      python-version: 3.11
+
+  - name: Install Poetry
+    run: |
+      curl -sSL https://install.python-poetry.org | python3 -
+      echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+  - name: Install dependencies with Poetry
+    run: |
+      poetry install --with dev
+
+  - name: Run Pytest on all test modules
+    run: |
+      poetry run pytest tests/
+#
+#  - name: 🐳 Build Docker Image
+#    run: docker build -t price-elasticity-pipeline .
+#
+#  - name: 🚀 Run Pipeline in Container
+#    run: docker run --rm price-elasticity-pipeline
