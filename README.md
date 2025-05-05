@@ -5,9 +5,17 @@ This project delves into Vestiaire Collective, a leading global platform for buy
 
 Join us on this journey to explore the future of sustainable luxury fashion! 🌍👗
 
+## 📌 Project Goal
 
-Link to company : https://us.vestiairecollective.com  
-Link to dataset : https://www.kaggle.com/datasets/justinpakzad/vestiaire-fashion-dataset
+To forecast demand (i.e., the likelihood of a product being sold) and provide actionable insights for optimizing pricing and inventory in the second-hand luxury market.
+
+## 🌐 Project Links
+
+- Company: [Vestiaire Collective](https://us.vestiairecollective.com)
+- Dataset: [Kaggle – Vestiaire Fashion Dataset](https://www.kaggle.com/datasets/justinpakzad/vestiaire-fashion-dataset)
+
+
+This `README.md` is structured into the following sections: **Project Structure**, **Dependency Management**, **Unit Tests** (implementation and coverage), **MLflow Tracking**, **AutoML Implementation** (Azure & batch processing), **Containerized Model Deployment**, and **Advanced Topics** including **Sentiment Analysis** and **Causal Inference**.
 
 ---
 ## 📁 Project Structure
@@ -44,6 +52,7 @@ project_ml_flow copy/
 ├── ci_pipeline.yml            # GitHub CI config
 └── README.md
 ```
+
 ---
 ## Dependency Management
 
