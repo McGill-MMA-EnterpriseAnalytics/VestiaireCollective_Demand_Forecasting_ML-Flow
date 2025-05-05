@@ -90,7 +90,7 @@ Each test folder includes the relevant scripts and supporting documentation on h
 # 🧪 Seller Analysis — Testing
 
 ## Tests Structure:
-
+```
 ├── src/
 │ └── seller_analysis_notebook_script.py
 ├── tests
@@ -101,7 +101,7 @@ Each test folder includes the relevant scripts and supporting documentation on h
 │ ├── 5_Integration_Tests.ipynb
 │ ├── 6_Data_Skew_Tests.ipynb
 │ └── 7_Load_Tests.ipynb
-
+```
 This file describes each of the 7 test notebooks used in the project, explaining what each one checks and why it is important.
 
 ## 1️⃣ Unit Tests
