@@ -319,3 +319,34 @@ Note: We attempted to integrate Azure AutoML with MLflow tracking within the aut
 Despite trying multiple workarounds—including assigning Owner and Contributor roles to different team members across the Azure subscription—the MLflow tracking functionality could not be fully enabled for the AutoML runs. This was primarily due to insufficient access to modify workspace-level diagnostic settings and restricted access to default storage accounts.
 
 As a result, AutoML run artifacts are not automatically logged via MLflow in this implementation. All other model results, metrics, and evaluations are saved locally and documented manually within the notebooks.
+
+## Batch Processing for Large Data File
+
+In this project, we encountered a large dataset (129 MB) that was challenging to process due to memory constraints. To address this, we implemented two versions of the batch processing pipeline:
+
+### 🛠️ Simple Implementation
+The first implementation is a basic approach that processes the full dataset at once. While the training process is slow and can run indefinitely due to the large size, it is expected to provide a good model accuracy if it completes successfully. This implementation uses **XGBoost** with **SMOTETomek** for imbalanced data handling.
+
+- **Pros**: Straightforward, no need for batch handling.
+- **Cons**: Long processing time, potentially leading to memory overflow on resource-constrained machines.
+
+```python
+# Full dataset processing (takes time)
+model.fit(X_train_resampled, y_train_resampled)
+```
+
+### ⚡ Optimized Implementation
+The second version is an optimized version of the first, utilizing memory-efficient techniques to speed up processing. This version includes:
+- **Optimized Data Loading**: Reduces memory usage by loading only necessary columns and optimizing data types.
+- **Batch Predictions**: Splits prediction tasks into smaller batches to reduce memory footprint during inference.
+- **SMOTE-Tomek**: Applied to balance the classes, improving model accuracy on imbalanced datasets.
+
+- **Pros**: Faster and more memory-efficient.
+- **Cons**: Slightly more complex but improves processing time significantly.
+
+```python
+# Optimized data loading and batch prediction for faster processing
+df = optimize_dtypes(df)
+```
+
+
