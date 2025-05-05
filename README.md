@@ -9,7 +9,8 @@ Join us on this journey to explore the future of sustainable luxury fashion! �
 Link to company : https://us.vestiairecollective.com  
 Link to dataset : https://www.kaggle.com/datasets/justinpakzad/vestiaire-fashion-dataset
 ---
-## 🔍 Unit Testing
+
+## 🔍 Unit Testing - Price Elasticity
 
 The tests/ directory contains unit tests for two key analytical components of the project:
 
@@ -21,6 +22,87 @@ The tests/ directory contains unit tests for two key analytical components of th
 - *Seller Analysis Tests: These cover logic and feature engineering from the *seller behavior analysis notebook.
 
 Each test folder includes the relevant scripts and supporting documentation on how to implement and extend the unit testing process.
+
+# 🧪 Seller Analysis — Testing
+
+## Tests Structure:
+
+├── src/
+│ └── seller_analysis_notebook_script.py
+├── tests
+│ ├── 1_Unit_Tests.ipynb
+│ ├── 2_Data_Tests.ipynb
+│ ├── 3_Model_Validation_Tests.ipynb
+│ ├── 4_Model_Performance_Tests.ipynb
+│ ├── 5_Integration_Tests.ipynb
+│ ├── 6_Data_Skew_Tests.ipynb
+│ └── 7_Load_Tests.ipynb
+
+This file describes each of the 7 test notebooks used in the project, explaining what each one checks and why it is important.
+
+## 1️⃣ Unit Tests
+**Notebook:** `1_Unit_Tests.ipynb`  
+**What it does:**  
+- Tests key preprocessing steps: missing value imputation, column dropping.  
+
+**Purpose:**  
+- Ensure each transformation step works correctly in isolation.
+- Catch simple logic or syntax errors before combining steps.
+
+## 2️⃣ Data Tests
+**Notebook:** `2_Data_Tests.ipynb`  
+**What it does:**  
+- Checks for duplicate rows.
+- Confirms that columns have the expected data types.
+- Ensures no unexpected missing values remain.
+
+**Purpose:**  
+- Guarantee data consistency and cleanliness before analysis.
+- Prevent downstream issues in models or aggregations.
+
+## 3️⃣ Model Validation Tests
+**Notebook:** `3_Model_Validation_Tests.ipynb`  
+**What it does:**  
+- Placeholder test that validates model metrics like accuracy or AUC.
+
+**Purpose:**  
+- Used once a predictive model is added to confirm it meets quality standards.
+
+## 4️⃣ Model Performance Tests
+**Notebook:** `4_Model_Performance_Tests.ipynb`  
+**What it does:**  
+- Placeholder to measure training or prediction time.
+
+**Purpose:**  
+- Ensure your model runs efficiently and can be used at scale.
+
+## 5️⃣ Integration Tests
+**Notebook:** `5_Integration_Tests.ipynb`  
+**What it does:**  
+- Runs the full pipeline (cleaning + type detection) and checks the final output.
+
+**Purpose:**  
+- Make sure all steps work together without conflicts.
+- Validate the pipeline end-to-end.
+
+## 6️⃣ Data Skew Tests
+**Notebook:** `6_Data_Skew_Tests.ipynb`  
+**What it does:**  
+- Compares distributions (e.g., mean of `buyers_fees`) between current and new data.
+
+**Purpose:**  
+- Detect shifts in data that could affect model accuracy or rule validity.
+
+## 7️⃣ Load Tests
+**Notebook:** `7_Load_Tests.ipynb`  
+**What it does:**  
+- Simulates large dataset and tests pipeline behavior.
+
+**Purpose:**  
+- Ensure your pipeline can handle future scaling and real-world data loads.
+
+📁 Each notebook is self-contained and runnable in Jupyter Notebook or VSCode.
+"""
 
 ## Machine Learning Experiment Tracking with MLflow & Optuna
 
