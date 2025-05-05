@@ -59,17 +59,17 @@ project_ml_flow copy/
 This project uses [Poetry](https://python-poetry.org/) for dependency and environment management.
 
 To install all required packages (based on the `pyproject.toml` and locked versions in `poetry.lock`), run:
-
-(bash)
-poetry install
-
+```python 
+  # (bash)
+  poetry install
+```
 This ensures full reproducibility of the development environment.
 
 To activate the virtual environment:
-
-(bash)
-poetry shell
-
+```python 
+  #(bash)
+  poetry shell
+```
 ---
 
 ## Unit Testing - Price Elasticity
