@@ -240,6 +240,35 @@ with mlflow.start_run(run_name="Test_Evaluation", nested=True, parent_run_id=par
         mlflow.log_metrics(metrics)
 ```
 
+### Sentiment Analysis & Causal Inference
+
+#### Overview
+This module analyzes product descriptions using VADER sentiment analysis and explores causal relationships between price differentials, description sentiment, and sales outcomes on the Vestiaire Collective marketplace.
+
+#### Methodology
+- **Sentiment Analysis**: Applied VADER to quantify sentiment in product descriptions (compound scores range from -1 to +1)
+- **Causal Inference**: Implemented S-Learner models (Linear Regression, XGBoost, MLP) to estimate treatment effects
+- **Balanced Analysis**: Addressed 60/30/10 positive/neutral/negative class imbalance through undersampling
+
+#### Key Findings
+1. No statistically significant causal relationship between:
+   - Price differential percentage and description sentiment
+   - Description sentiment and product sales
+   
+2. All estimated effects were minimal in magnitude, with confidence intervals crossing zero
+
+3. Price segment analysis revealed slight variation in treatment effects across price points
+
+#### Business Applications
+- Product descriptions' emotional tone doesn't significantly impact sales performance
+- Focus on factual accuracy rather than sentiment optimization when creating listings
+- Price differential decisions can be made independently of description strategy
+- Higher-priced items may benefit from more neutral, information-focused descriptions
+
+#### Code Structure
+The module provides functions for sentiment analysis, visualization, and causal inference with both original and balanced datasets. See `analyze_product_descriptions()` and related functions for implementation details.
+
+
 ### How to View Experiment Results
 
 1. Start the MLflow UI:
