@@ -1,7 +1,7 @@
 
 # 🧪 How to Run Each Test Notebook
 
-Each test is implemented in a separate Jupyter notebook under the `testing_notebooks/` folder.  
+Each test is implemented in a separate Jupyter notebook under the `tests/` folder.  
 You can run the tests manually using Jupyter Notebook or VSCode.
 
 ---
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-3. **Navigate to** the `testing_notebooks/` directory.
+3. **Navigate to** the `tests/` directory.
 
 4. **Open one of the notebooks below** and **run all cells**.
 
