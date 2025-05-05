@@ -10,7 +10,7 @@ Link to company : https://us.vestiairecollective.com
 Link to dataset : https://www.kaggle.com/datasets/justinpakzad/vestiaire-fashion-dataset
 ---
 
-## 🔍 Unit Testing - Price Elasticity
+## Unit Testing - Price Elasticity
 
 The tests/ directory contains unit tests for two key analytical components of the project:
 
@@ -23,7 +23,7 @@ The tests/ directory contains unit tests for two key analytical components of th
 
 Each test folder includes the relevant scripts and supporting documentation on how to implement and extend the unit testing process.
 
-# 🧪 Seller Analysis — Testing
+# Seller Analysis — Testing
 
 ## Tests Structure:
 
@@ -324,7 +324,7 @@ As a result, AutoML run artifacts are not automatically logged via MLflow in thi
 
 In this project, we encountered a large dataset (129 MB) that was challenging to process due to memory constraints. To address this, we implemented two versions of the batch processing pipeline:
 
-### 🛠️ Simple Implementation
+### Simple Implementation
 The first implementation is a basic approach that processes the full dataset at once. While the training process is slow and can run indefinitely due to the large size, it is expected to provide a good model accuracy if it completes successfully. This implementation uses **XGBoost** with **SMOTETomek** for imbalanced data handling.
 
 - **Pros**: Straightforward, no need for batch handling.
@@ -335,7 +335,7 @@ The first implementation is a basic approach that processes the full dataset at 
 model.fit(X_train_resampled, y_train_resampled)
 ```
 
-### ⚡ Optimized Implementation
+### Optimized Implementation
 The second version is an optimized version of the first, utilizing memory-efficient techniques to speed up processing. This version includes:
 - **Optimized Data Loading**: Reduces memory usage by loading only necessary columns and optimizing data types.
 - **Batch Predictions**: Splits prediction tasks into smaller batches to reduce memory footprint during inference.
