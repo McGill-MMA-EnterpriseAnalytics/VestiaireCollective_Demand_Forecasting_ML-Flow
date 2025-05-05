@@ -70,8 +70,9 @@ The trained model is served via a FastAPI app containerized with Docker.
 2. Run the Container: (bash) docker run -p 8000:8000 vestiaire_predict
    
 3. Access the Swagger UI: http://localhost:8000/docs
-  
+
 This will load the Swagger interface where you can interact with the /predict endpoint to test predictions.
+
 ---
 
 ## Unit Testing - Price Elasticity
